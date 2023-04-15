@@ -36,6 +36,7 @@ public class prog{
         lojaGomes.registrarVenda(vendedorManoelG, produtoLapis, 1);
         lojaGomes.registrarVenda(vendedorCiroG, produtoCaderno, 2);
         lojaGomes.registrarVenda(vendedorCiroG, produtoCaneta, 2);
+        System.out.println();
 
         //mostrar estoque
         lojaGomes.mostrarEstoque();

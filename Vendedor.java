@@ -10,9 +10,6 @@ public class Vendedor{
     private float valorVendido;
     private HashMap<Produto, Integer> vendas;
 
-    public Vendedor(){
-
-    }
     public Vendedor(String nome, int matricula){
         this.nome = nome;
         this.matricula = matricula;
@@ -23,21 +20,17 @@ public class Vendedor{
         this.vendas.put(produto, quantidade);
     }
    
-
     public void mostrarRelatorio(){
         float soma = 0;
-        String nomeVendedor;
         for(Map.Entry<Produto, Integer> venda: vendas.entrySet()){
-            String x = String.format(
+            String txt = String.format(
                 "Produto: %s \ndescrição: %s \nquantidade: %d", 
                 venda.getKey().getNome(), 
-
                 venda.getKey().getDescricao(), 
                 venda.getValue());
-            System.out.println(x);
+            System.out.println(txt);
             System.out.println();
            
-
             soma = venda.getValue() * venda.getKey().getValor();
             this.valorVendido = soma;
         }
@@ -60,14 +53,14 @@ public class Vendedor{
         this.matricula = matricula;
     }
 
+    public float getValorVendido() {
+        return this.valorVendido;
+    }
+
     public String toString(){
         String x = String.format(
                 "Nome do vendedor: %s \nMatricula: %s", this.nome, this.matricula
         );
         return x;
-    }
-
-    public float getValorVendido() {
-        return this.valorVendido;
     }
 }
