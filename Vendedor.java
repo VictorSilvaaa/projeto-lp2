@@ -17,11 +17,16 @@ public class Vendedor{
     }
 
     public void setVenda(Produto produto, int quantidade){
-        this.vendas.put(produto, quantidade);
+        if(this.vendas.get(produto)==null){
+            this.vendas.put(produto, quantidade);
+        }else{
+            int novaQuantidade = this.vendas.get(produto) + quantidade;
+            this.vendas.put(produto, novaQuantidade);
+        }    
     }
    
     public void mostrarRelatorio(){
-        float soma = 0;
+        float soma = 0.0f;
         for(Map.Entry<Produto, Integer> venda: vendas.entrySet()){
             String txt = String.format(
                 "Produto: %s \ndescrição: %s \nquantidade: %d", 
@@ -31,10 +36,10 @@ public class Vendedor{
             System.out.println(txt);
             System.out.println();
            
-            soma = venda.getValue() * venda.getKey().getValor();
+            soma += venda.getValue() * venda.getKey().getValor();
             this.valorVendido = soma;
         }
-        System.out.println(String.format("Valor Total vendido por %s foi: %.2f\n",this.nome, soma));
+        System.out.println(String.format("Valor Total vendido por %s foi: %.2f\n",this.nome, this.valorVendido));
     }
     
     public String getNome() {
