@@ -39,8 +39,10 @@ public class prog{
         System.out.println();
 
         //mostrar estoque
+        System.out.println("-------Relatório Estoque--------");
         lojaGomes.mostrarEstoque();
         //relatorio completo
+        System.out.println("-------Relatório Completo Loja--------");
         lojaGomes.mostrarRelatorioCompleto();
     }
 }

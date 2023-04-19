@@ -16,7 +16,19 @@ public class Loja{
     }
 
     public void setVendedor(Vendedor vendedor){
-        this.vendedores.add(vendedor);
+        boolean flag = true;
+       for(Vendedor v: this.vendedores){
+        //verifica se vendedor ja esta cadastrado
+            if(v.equals(vendedor)){
+                System.out.println("Vendedor já está cadastrado");
+                flag= false;
+                break;
+            }
+       } 
+       //se vendedor não tiver cadastrado
+       if(flag){
+            this.vendedores.add(vendedor);
+       }
     }
 
     public void setProdutos(Produto p){
