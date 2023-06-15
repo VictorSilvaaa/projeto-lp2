@@ -5,6 +5,7 @@ import java.lang.String;
 
 
 public class Vendedor{
+    //definindo atributos
     private int matricula;
     private String nome;
     private float valorVendido;

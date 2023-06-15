@@ -1,3 +1,4 @@
+//Alunos: Ingrid Coelho Carvalho/ João Victor da Silva Sales
 
 public class prog{
     public static void main(String args[]){
@@ -42,7 +43,6 @@ public class prog{
         System.out.println("-------Relatório Estoque--------");
         lojaGomes.mostrarEstoque();
         //relatorio completo
-        System.out.println("-------Relatório Completo Loja--------");
         lojaGomes.mostrarRelatorioCompleto();
     }
 }

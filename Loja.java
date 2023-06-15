@@ -50,10 +50,13 @@ public class Loja{
 
     public void mostrarRelatorioCompleto(){
         float soma =0.0f;
+        System.out.println(String.format("---------------Relatório de %s------------------", this.nome));
         for(Vendedor v: this.vendedores){
             System.out.println(v.toString());
             System.out.println(String.format("----Relatório de venda %s----",v.getNome()));
+            //chama função de relatório do vendedor
             v.mostrarRelatorio();
+            //pega valor da venda de cada vendedor e vai somando pra um valor total da loja
             soma += v.getValorVendido();
         }
         System.out.println(String.format("\n-->valor total de vendas da loja: %.2f", soma));
